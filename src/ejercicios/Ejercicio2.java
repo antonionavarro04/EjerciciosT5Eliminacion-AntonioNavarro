@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.Locale;
 
 public class Ejercicio2 {
-    // ^ Definimos una instancia de la clase Scanner como final de nombre read y cambiamos su formato a US
+    // ^ Definimos una instancia de la clase Scanner como private static final de nombre read y cambiamos su formato a US
     private static final Scanner read = new Scanner(System.in).useLocale(Locale.US);
 
     public static void main(String[] args) {
