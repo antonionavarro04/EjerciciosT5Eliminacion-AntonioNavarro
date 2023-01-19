@@ -78,6 +78,16 @@ public class SharedMethods {
         } System.out.print("]"); System.out.println();
     }
 
+    public static void printArrayCascade(int[] array) {
+        if (array.length == 0) {
+            System.out.println("[EMPTY]");
+        } else {
+            for (int pos = 0; pos < array.length; pos++) {
+                System.out.println("[" + pos + "] ---> " + array[pos]);
+            }
+        }
+    }
+
     // ! Funcion Primos
     public static boolean esPrimo(int numero) {
         boolean state = false;
