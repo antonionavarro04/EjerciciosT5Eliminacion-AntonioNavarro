@@ -53,7 +53,11 @@ public class SharedMethods {
         for (byte pos = 0; pos < array.length; pos++) {
             array[pos] = (int) (Math.random() * ((max - min) + 1) + min);
         } return array;
-    }
+    } public static int[] randomFill(int[] array, int max) {
+        for (byte pos = 0; pos < array.length; pos++) {
+            array[pos] = (int) (Math.random() * (max + 1));
+        } return array;
+    }    
 
     // ! Con Scanner
     public static void scannerFill(int[] array, java.util.Scanner read) {
