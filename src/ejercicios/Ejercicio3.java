@@ -27,12 +27,18 @@ public class Ejercicio3 {
 
         do { // ! Mostraremos el menú hasta que el usuario introduzca 'c' 
             printMenu();
-            option = read.nextLine().charAt(0);
-            System.out.println(); // ? Salto de Línea
+            try {
+                option = read.nextLine().charAt(0);
+            } catch (StringIndexOutOfBoundsException exception) {
+                System.err.println("Ha habido un error al introducir el valor, se ajustará automaticamente como '!' \nDetailed Error: " + exception);
+                option = '!';
+            } System.out.println(); // ? Salto de Línea
             switch (option) { // * Mediante un Switch-Case trabajaremos en consecuencia de la opción elegida por el usuario
+                case 'A':
                 case 'a': // * Imprimiremos el Array
                     SharedMethods.printArray(array);
                     break;
+                case 'B':
                 case 'b': // * Preguntamos el numero a eliminar y llamamos a la función
                     System.out.println("Que número desea eliminar?");
                     System.out.print(">>> ");
@@ -40,18 +46,18 @@ public class Ejercicio3 {
                     try {
                         array = SharedMethods.deleteData(array, numberToBeDeleted);
                     } catch (IndexOutOfBoundsException exception) {
-                        System.err.println("El número " + numberToBeDeleted + " no existe en el array\n" + "Error: " + exception);
-                    }
-                    break;
+                        System.err.println("El número " + numberToBeDeleted + " no existe en el array\n" + "Detailed Error: " + exception);
+                    } break;
+                case 'C':
                 case 'c': // * Solo mostramos que pulse enter para salir
-                    System.out.println("Pulsa 'enter' para salir...");
+                    System.out.print("Pulsa 'enter' para salir... ");
                     break;
                 default: // * Cualquier otra opción sera inválida
                     System.err.println("Opción Inválida!");
                     break;
             }
-            if (option != 'c') {
-                System.out.println("Pulsa 'enter' para continuar...");
+            if (option != 'c' && option != 'C') {
+                System.out.print("Pulsa 'enter' para continuar... ");
             } read.nextLine();
         } while (option != 'c');
     }
