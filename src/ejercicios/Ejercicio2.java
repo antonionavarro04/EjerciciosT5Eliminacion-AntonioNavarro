@@ -35,4 +35,4 @@ public class Ejercicio2 {
         // ? Mostramos el Array con los no primos eliminados
         System.out.println("Array sin los numeros no Primos:"); SharedMethods.printArray(array);
     }
-}
+} // € Hecho por Antonio Navarro
