@@ -20,9 +20,19 @@ public class Ejercicio2 {
         System.out.println();
         
         // ? Imprimimos el Array Completo
-        SharedMethods.printArray(array);
+        System.out.println("Array Original:"); SharedMethods.printArray(array);
+        System.out.println(); // ? Salto de Línea Adicional
 
-        // ! Mediante un for recorreremos todos los numeros, si el numero no es primo lo eliminaremos de la tabla y decrementaremos la posicion ya que en la posicion que acabamos de eliminar el no primo ahora puede haber otro
+        // ! Mediante un for recorreremos todos los numeros
+        for (int pos = 0; pos < array.length; pos++) {
+            if (!SharedMethods.esPrimo(array[pos])) { // ! Si el numero no es primo lo eliminaremos de la tabla
+                array = SharedMethods.deleteKnowingData(array, pos);
+                // ! Decrementaremos la posicion ya que en la posicion que acabamos de eliminar el no primo ahora puede haber otro
+                pos--;
+            }
+        }
 
+        // ? Mostramos el Array con los no primos eliminados
+        System.out.println("Array sin los numeros no Primos:"); SharedMethods.printArray(array);
     }
 }
