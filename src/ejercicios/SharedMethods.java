@@ -66,7 +66,9 @@ public class SharedMethods {
     // ! Imprimir Array sin return
     public static void printArray(int[] array) {
         System.out.print("[");
-        for (int pos = 0; pos < array.length; pos++) {
+        if (array.length == 0) {
+            System.out.print("EMPTY");
+        } for (int pos = 0; pos < array.length; pos++) {
             System.out.print(array[pos]);
             if (pos != array.length - 1) {
                 System.out.print(", ");
@@ -78,7 +80,7 @@ public class SharedMethods {
     public static boolean esPrimo(int numero) {
         boolean state = false;
         if (numero <= 1) {
-            // ? Si el numero es 1 o menor no hacemos nada
+            // ? Si el numero es 1 o menor no hacemos nada, lo que significa que devolverá false
         } else {
             for (int divisor = 2; divisor < numero; divisor++) {
                 if (numero % divisor == 0) {
