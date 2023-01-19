@@ -4,7 +4,6 @@ package ejercicios;
 import java.util.Scanner;
 import java.util.Locale;
 
-import java.util.Arrays;
 public class Ejercicio3 {
     // ^ Definimos una instancia de la clase Scanner como private static final de nombre read y cambiamos su formato a US
     private static final Scanner read = new Scanner(System.in).useLocale(Locale.US);
@@ -23,7 +22,7 @@ public class Ejercicio3 {
         char option; int numberToBeDeleted;
 
         // ! Rellenamos el array con numeros aleatorios comprendidos entre 0 y 1000
-        SharedMethods.randomFill(array, 1000); Arrays.sort(array);
+        SharedMethods.randomFill(array, 1000);
 
         do { // ! Mostraremos el menú hasta que el usuario introduzca 'c' 
             printMenu();
@@ -44,13 +43,13 @@ public class Ejercicio3 {
                     System.out.print(">>> ");
                     numberToBeDeleted = read.nextInt(); read.nextLine(); // ? Limpieza de Búffer
                     try {
-                        array = SharedMethods.deleteData(array, numberToBeDeleted);
+                        array = SharedMethods.deleteUnsortedData(array, numberToBeDeleted);
                     } catch (IndexOutOfBoundsException exception) {
                         System.err.println("El número " + numberToBeDeleted + " no existe en el array\n" + "Detailed Error: " + exception);
                     } break;
                 case 'C':
                 case 'c': // * Solo mostramos que pulse enter para salir
-                    System.out.print("Pulsa 'enter' para salir... ");
+                    System.out.print("Programa Finalizado... ");
                     break;
                 default: // * Cualquier otra opción sera inválida
                     System.err.println("Opción Inválida!");
@@ -61,4 +60,4 @@ public class Ejercicio3 {
             } read.nextLine();
         } while (option != 'c');
     }
-}
+} // € Hecho por Antonio Navarro

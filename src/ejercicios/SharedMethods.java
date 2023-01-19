@@ -12,6 +12,13 @@ public class SharedMethods {
         System.arraycopy(originalArray, indexOfSearched + 1, newArray, indexOfSearched, spotsToCopy);
         newArray = Arrays.copyOf(newArray, newArray.length - 1);
         return newArray;
+    } public static int[] deleteUnsortedData(int originalArray[], int numberToBeSearched) { // ? Must be Ordered
+        int newArray[] = originalArray;
+        int indexOfSearched = secuentialSearch(originalArray, numberToBeSearched);
+        int spotsToCopy = originalArray.length - indexOfSearched - 1;
+        System.arraycopy(originalArray, indexOfSearched + 1, newArray, indexOfSearched, spotsToCopy);
+        newArray = Arrays.copyOf(newArray, newArray.length - 1);
+        return newArray;
     } public static int[] deleteKnowingData(int originalArray[], int position) {
         int newArray[] = originalArray;
         int spotsToCopy = originalArray.length - position - 1;
