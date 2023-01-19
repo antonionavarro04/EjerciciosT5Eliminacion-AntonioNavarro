@@ -12,20 +12,33 @@ public class SharedMethods {
         System.arraycopy(originalArray, indexOfSearched + 1, newArray, indexOfSearched, spotsToCopy);
         newArray = Arrays.copyOf(newArray, newArray.length - 1);
         return newArray;
-    } public static int[] deleteUnsortedData(int originalArray[], int numberToBeSearched) { // ? Must be Ordered
+    } public static int[] deleteUnsortedData(int originalArray[], int numberToBeSearched) { // ? Can be Ordered
         int newArray[] = originalArray;
         int indexOfSearched = secuentialSearch(originalArray, numberToBeSearched);
         int spotsToCopy = originalArray.length - indexOfSearched - 1;
         System.arraycopy(originalArray, indexOfSearched + 1, newArray, indexOfSearched, spotsToCopy);
         newArray = Arrays.copyOf(newArray, newArray.length - 1);
         return newArray;
-    } public static int[] deleteKnowingData(int originalArray[], int position) {
+    } public static int[] deleteKnowingData(int originalArray[], int position) { // ? Can be ordered
         int newArray[] = originalArray;
         int spotsToCopy = originalArray.length - position - 1;
         System.arraycopy(originalArray, position + 1, newArray, position, spotsToCopy);
         newArray = Arrays.copyOf(newArray, newArray.length - 1);
         return newArray;
-    }
+    } 
+    
+    /* public static int[] deleteUnsortedDataRecursive(int originalArray[], int numberToBeSearched) { // ? No funciona correctamente
+        int newArray[] = originalArray;
+        int indexOfSearched = secuentialSearch(originalArray, numberToBeSearched);
+        int spotsToCopy = originalArray.length - indexOfSearched - 1;
+        System.arraycopy(originalArray, indexOfSearched + 1, newArray, indexOfSearched, spotsToCopy);
+        newArray = Arrays.copyOf(newArray, newArray.length - 1);
+        for (int value : newArray) {
+            if (value == numberToBeSearched) {
+                newArray = deleteUnsortedDataRecursive(newArray, numberToBeSearched);
+            }
+        } return newArray;
+    } */
 
     // ! Dobles
     public static double[] deleteData(double originalArray[], double numberToBeSearched) { // ? Must be Ordered
