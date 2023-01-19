@@ -57,7 +57,8 @@ public class Ejercicio3 {
             }
             if (option != 'c' && option != 'C') {
                 System.out.print("Pulsa 'enter' para continuar... ");
-            } read.nextLine();
+                read.nextLine();
+            }
         } while (option != 'c');
     }
 } // € Hecho por Antonio Navarro
