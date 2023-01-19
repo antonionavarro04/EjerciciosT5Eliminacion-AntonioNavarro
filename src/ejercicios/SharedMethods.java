@@ -68,10 +68,12 @@ public class SharedMethods {
         System.out.print("[");
         if (array.length == 0) {
             System.out.print("EMPTY");
-        } for (int pos = 0; pos < array.length; pos++) {
-            System.out.print(array[pos]);
-            if (pos != array.length - 1) {
-                System.out.print(", ");
+        } else {
+            for (int pos = 0; pos < array.length; pos++) {
+                System.out.print(array[pos]);
+                if (pos != array.length - 1) {
+                    System.out.print(", ");
+                }
             }
         } System.out.print("]"); System.out.println();
     }
