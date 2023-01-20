@@ -4,6 +4,13 @@ package ejercicios;
 import java.util.Arrays;
 
 public class SharedMethods {
+    // ! Inserar datos
+    public static int[] insertData(int array[], int number) {
+        array = Arrays.copyOf(array, array.length + 1);
+        array[array.length - 1] = number;
+        return array;
+    }
+
     // ! Enteros
     public static int[] deleteData(int originalArray[], int numberToBeSearched) { // ? Must be Ordered
         int newArray[] = originalArray;
@@ -126,5 +133,14 @@ public class SharedMethods {
                 }
             }
         } return state;
+    }
+
+    // ! Media
+    public static int media(int num1, int num2) {
+        float resultado; // ? Creamos una variable resultado que sea de punto flotante
+        resultado = num1 + num2; // ? Sumamamos los 2 numeros
+        resultado /= 2.0f; // ? Dividimos entre 2 para conseguir la media aritmética
+        resultado += 0.5f; // ? Suamamos 0.5 para redondear en vez de truncar
+        return (int) resultado; // ? Devolovemos el resultado en forma de entero
     }
 } // € Hecho por Antonio Navarro
