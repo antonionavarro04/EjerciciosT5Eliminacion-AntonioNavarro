@@ -31,8 +31,7 @@ public class Ejercicio5 {
                         break; // * Salimos del Bucle
                     }
                 } if (!encontrado) { // * Si el numero no está en el array lo aumentaremos 1 su posicion y meteremos el valor en la ultima posición
-                    array = Arrays.copyOf(array, array.length + 1);
-                    array[array.length - 1] = number;
+                    array = SharedMethods.insertData(array, number);
                 } else { // * Si esta en la lista lo notificaremos y cambiaremos encontrado a false
                     System.err.println("El número " + number + " ya esta en la lista");
                     encontrado = false;
