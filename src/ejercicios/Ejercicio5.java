@@ -44,14 +44,14 @@ public class Ejercicio5 {
             random1 = (int) (Math.random() * (array.length));
             do { // * Para el segundo numero tendremos que generarlo hasta que sea diferente del primero
                 random2 = (int) (Math.random() * (array.length));
-            } while(random2 == random1);
+            } while (random2 == random1);
             media = SharedMethods.media(array[random1], array[random2]); // * Hacemos la media aritmética de los dos números en esas posiciones
             int aux = array[random2]; // * Para el segundo valor la posición puede variar por lo que antes de eliminar vamos a guardar el valor en una variable aux
             array = SharedMethods.deleteKnowingData(array, random1); // * Eliminamos los dos valores del array, para el primero si sabemos la posición
             array = SharedMethods.deleteData(array, aux); // * El segundo lo eliminaremos en base a su valor y no a su posición
             array = SharedMethods.insertData(array, media); // * Inseramos el valor en la última posición
             Arrays.sort(array); // * Ordenamos el array antes de pasar al siguiente número
-        } while(array.length != 1);
+        } while (array.length != 1);
 
         // ? Imprimimos el Número de la Suerte
         System.out.println("Tu número de la suerte es el: " + array[0]);
