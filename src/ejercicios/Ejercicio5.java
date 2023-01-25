@@ -14,7 +14,7 @@ public class Ejercicio5 {
         int array[] = new int[0];
 
         // ^ Definimos una variable número y otra encontrado
-        int number; boolean encontrado = false;
+        int number;
 
         // ^ Definimos dos variables enteras que nos proporcionaran el número aleatorio para buscar en la lista, así como una variable para la media
         int random1, random2, media;
@@ -22,6 +22,7 @@ public class Ejercicio5 {
         // ! Pedimos al usuario que escriba tantos números como quiera, al introducir un número negativo parará de introducir numeros negativos
         System.out.println("Introduce tus números favoritos!");
         do { // * No se podrán repetir números
+            boolean encontrado = false;
             System.out.print(">>> ");
             number = read.nextInt();
             if (number >= 0) { // * Solo insertaremos números >= 0
@@ -34,10 +35,9 @@ public class Ejercicio5 {
                     array = SharedMethods.insertData(array, number);
                 } else { // * Si esta en la lista lo notificaremos y cambiaremos encontrado a false
                     System.err.println("El número " + number + " ya esta en la lista");
-                    encontrado = false;
                 } Arrays.sort(array);
             }
-        } while (number >= 0);
+        } while (number >= 0 || array.length <= 2);
 
         do { // ! Abrimos un bucle do-while que se ejecutara hasta que la lista sea de tamaño 1
             // * Primero generaremos 2 posiciones aleatorias en base a las posiciones que tiene el array
