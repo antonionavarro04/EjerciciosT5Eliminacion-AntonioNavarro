@@ -37,7 +37,7 @@ public class Ejercicio5 {
                     System.err.println("El número " + number + " ya esta en la lista");
                 } Arrays.sort(array);
             }
-        } while (number >= 0 || array.length <= 2);
+        } while (number >= 0 || array.length < 2);
 
         do { // ! Abrimos un bucle do-while que se ejecutara hasta que la lista sea de tamaño 1
             // * Primero generaremos 2 posiciones aleatorias en base a las posiciones que tiene el array

@@ -32,8 +32,8 @@ public class SharedMethods {
         System.arraycopy(originalArray, position + 1, newArray, position, spotsToCopy);
         newArray = Arrays.copyOf(newArray, newArray.length - 1);
         return newArray;
-    } 
-    
+    }
+
     /* public static int[] deleteUnsortedDataRecursive(int originalArray[], int numberToBeSearched) { // ? No funciona correctamente
         int newArray[] = originalArray;
         int indexOfSearched = secuentialSearch(originalArray, numberToBeSearched);
